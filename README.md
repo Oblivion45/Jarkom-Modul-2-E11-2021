@@ -83,6 +83,35 @@ Untuk mengecek apakah sudah benar, maka kita akan stop bind9 pada EniesLobby, se
 
 ### Soal 6
 Setelah itu terdapat subdomain ```mecha.franky.yyy.com``` dengan alias ```www.mecha.franky.yyy.com``` yang didelegasikan dari EniesLobby ke Water7 dengan IP menuju ke Skypie dalam folder sunnygo.
+
+Untuk membuat subdomain dengan delegasi, pertama kita akan mengedit file ```/etc/bind/kaizoku/franky.e11.com``` menjadi sebagai berikut :
+
+[![Whats-App-Image-2021-10-30-at-01-13-23.jpg](https://i.postimg.cc/vHgXMxZg/Whats-App-Image-2021-10-30-at-01-13-23.jpg)](https://postimg.cc/GHRvx2Yd)
+
+Kemudian edit file ```/etc/bind/named.conf.options``` pada EniesLobby dengan comment dnssec-validation auto; dan tambahkan baris ```allow-query{any;};``` pada ```/etc/bind/named.conf.options.```
+
+[![Whats-App-Image-2021-10-30-at-01-17-02.jpg](https://i.postimg.cc/26Y8jWYz/Whats-App-Image-2021-10-30-at-01-17-02.jpg)](https://postimg.cc/t1rH2Y7f)
+
+Kemudian edit file ```/etc/bind/named.conf.local``` menjadi seperti gambar berikut:
+
+[![Whats-App-Image-2021-10-30-at-01-17-02.jpg](https://i.postimg.cc/26Y8jWYz/Whats-App-Image-2021-10-30-at-01-17-02.jpg)](https://postimg.cc/t1rH2Y7f)
+
+Setelah itu kita lakukan restart pada service bind9.
+
+Setelah melakukan konfigurasi pada EniesLobby, kita akan melakukan konfigurasi pada Water 7.
+
+Pada Water 7 kita akan mengedit file ```/etc/bind/named.conf.options``` dengan comment dnssec-validation auto; dan tambahkan baris ```allow-query{any;};``` pada ```/etc/bind/named.conf.options.```
+
+Lalu edit file ```/etc/bind/named.conf.local.```
+
+Kemudian buat direktori dengan nama delegasi yaitu sunnygo dan copy db.local ke direktori sunnygo dan edit namanya menjadi ```mecha.franky.e11.com.```
+
+[![Whats-App-Image-2021-10-30-at-01-28-35.jpg](https://i.postimg.cc/DwDRc3pH/Whats-App-Image-2021-10-30-at-01-28-35.jpg)](https://postimg.cc/rD1h83kN)
+
+Kemudian kita edit file ```mecha.franky.e11.com``` menjadi :
+
+[![Whats-App-Image-2021-10-30-at-01-32-25.jpg](https://i.postimg.cc/Mpky0sbt/Whats-App-Image-2021-10-30-at-01-32-25.jpg)](https://postimg.cc/7fVGwnRT)
+
 ### Soal 7
 Untuk memperlancar komunikasi Luffy dan rekannya, dibuatkan subdomain melalui Water7 dengan nama ```general.mecha.franky.yyy.com``` dengan alias ```www.general.mecha.franky.yyy.com``` yang mengarah ke Skypie.
 ### Soal 8
