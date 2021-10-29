@@ -121,6 +121,9 @@ Untuk menambahkan subdomain, kita bisa lakukan dengan mengedit file ```/etc/bind
 
 [![Whats-App-Image-2021-10-30-at-01-32-25.jpg](https://i.postimg.cc/Mpky0sbt/Whats-App-Image-2021-10-30-at-01-32-25.jpg)](https://postimg.cc/7fVGwnRT)
 
+Dan untuk mengecek / testing, kita bisa melakukan ```ping general.mecha.franky.e11.com``` pada Loguetown.
+
+[![Whats-App-Image-2021-10-30-at-01-51-47.jpg](https://i.postimg.cc/cLnvsYjz/Whats-App-Image-2021-10-30-at-01-51-47.jpg)](https://postimg.cc/VJzfgSz9)
 
 
 ### Soal 8
