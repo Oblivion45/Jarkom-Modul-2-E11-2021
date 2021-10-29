@@ -116,6 +116,13 @@ Untuk melakukan testing apakah sudah benar, kita bisa melakukan ping ```mecha.fr
 
 ### Soal 7
 Untuk memperlancar komunikasi Luffy dan rekannya, dibuatkan subdomain melalui Water7 dengan nama ```general.mecha.franky.yyy.com``` dengan alias ```www.general.mecha.franky.yyy.com``` yang mengarah ke Skypie.
+
+Untuk menambahkan subdomain, kita bisa lakukan dengan mengedit file ```/etc/bind/sunnygo/mecha.franky.e11.com``` menjadi :
+
+[![Whats-App-Image-2021-10-30-at-01-32-25.jpg](https://i.postimg.cc/Mpky0sbt/Whats-App-Image-2021-10-30-at-01-32-25.jpg)](https://postimg.cc/7fVGwnRT)
+
+
+
 ### Soal 8
 Setelah melakukan konfigurasi server, maka dilakukan konfigurasi Webserver. Pertama dengan webserver ```www.franky.yyy.com```. Pertama, luffy membutuhkan webserver dengan DocumentRoot pada ```/var/www/franky.yyy.com```.
 ### Soal 9
