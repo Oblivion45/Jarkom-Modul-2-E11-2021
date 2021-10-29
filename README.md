@@ -36,12 +36,20 @@ Kemudian, kita mengedit file ```franky.E11.com``` dan melakukan restart pada bin
 
 [![Whats-App-Image-2021-10-30-at-00-15-55.jpg](https://i.postimg.cc/kXT2G269/Whats-App-Image-2021-10-30-at-00-15-55.jpg)](https://postimg.cc/ykS1rYyr)
 
-Untuk mengecek apakah sudah benar, kita bisa mengecek lewat node Loguetown dengan melakukan setting nameserver : ```echo nameserver 192.205.2.2 > /etc/resolv.conf``` dan melakukan ```ping franky.E11.com``` dan untuk mengecek alias bisa menggunakan ```host -t CNAME www.franky.E11.com``` seperti pada gambar :
+Untuk mengecek apakah sudah benar, kita bisa mengecek lewat node Loguetown dengan melakukan setting nameserver : ```echo nameserver 192.205.2.2 > /etc/resolv.conf``` dan melakukan ```ping franky.E11.com``` yang seharusnya mengarah ke IP EniesLobby dan untuk mengecek alias bisa menggunakan ```host -t CNAME www.franky.E11.com``` seperti pada gambar :
 
 [![Whats-App-Image-2021-10-30-at-00-23-47.jpg](https://i.postimg.cc/P5hngyr5/Whats-App-Image-2021-10-30-at-00-23-47.jpg)](https://postimg.cc/mtdnMQHv)
 
 ### Soal 3
 Setelah itu buat subdomain ```super.franky.yyy.com``` dengan alias ```www.super.franky.yyy.com``` yang diatur DNS nya di EniesLobby dan mengarah ke Skypie.
+Untuk membuat subdomain, kita akan meng-edit file ```franky.E11.com``` pada EniesLobby dan menambahkan konfigurasinya setelah itu melakukan restart bind 9 seperti gambar berikut :
+
+[![Whats-App-Image-2021-10-30-at-00-31-29.jpg](https://i.postimg.cc/vHCcfpzS/Whats-App-Image-2021-10-30-at-00-31-29.jpg)](https://postimg.cc/jLQxr3Bz)
+
+Untuk mengecek apakah sudah benar atau belum, kita bisa melakukan ping dengan command ```ping super.franky.E11.com``` pada Loguetown dan hasilnya akan mengarah ke IP Skypie.
+
+[![Whats-App-Image-2021-10-30-at-00-34-56.jpg](https://i.postimg.cc/ry0jSt2V/Whats-App-Image-2021-10-30-at-00-34-56.jpg)](https://postimg.cc/V5wXwvNp)
+
 ### Soal 4
 Buat juga reverse domain untuk domain utama.
 ### Soal 5
