@@ -32,7 +32,13 @@ Pertama - tama kita melakukan instalasi bind dengan command ```apt-get install b
 
 [![Whats-App-Image-2021-10-30-at-00-11-12.jpg](https://i.postimg.cc/8PMyVVjh/Whats-App-Image-2021-10-30-at-00-11-12.jpg)](https://postimg.cc/xcjGKhGC)
 
+Kemudian, kita mengedit file ```franky.E11.com``` dan melakukan restart pada bind9, seperti pada gambar berikut :
 
+[![Whats-App-Image-2021-10-30-at-00-15-55.jpg](https://i.postimg.cc/kXT2G269/Whats-App-Image-2021-10-30-at-00-15-55.jpg)](https://postimg.cc/ykS1rYyr)
+
+Untuk mengecek apakah sudah benar, kita bisa mengecek lewat node Loguetown dengan melakukan setting nameserver : ```echo nameserver 192.205.2.2 > /etc/resolv.conf``` dan melakukan ```ping franky.E11.com``` dan untuk mengecek alias bisa menggunakan ```host -t CNAME www.franky.E11.com``` seperti pada gambar :
+
+[![Whats-App-Image-2021-10-30-at-00-23-47.jpg](https://i.postimg.cc/P5hngyr5/Whats-App-Image-2021-10-30-at-00-23-47.jpg)](https://postimg.cc/mtdnMQHv)
 
 ### Soal 3
 Setelah itu buat subdomain ```super.franky.yyy.com``` dengan alias ```www.super.franky.yyy.com``` yang diatur DNS nya di EniesLobby dan mengarah ke Skypie.
