@@ -92,10 +92,6 @@ Kemudian edit file ```/etc/bind/named.conf.options``` pada EniesLobby dengan com
 
 [![Whats-App-Image-2021-10-30-at-01-17-02.jpg](https://i.postimg.cc/26Y8jWYz/Whats-App-Image-2021-10-30-at-01-17-02.jpg)](https://postimg.cc/t1rH2Y7f)
 
-Kemudian edit file ```/etc/bind/named.conf.local``` menjadi seperti gambar berikut:
-
-[![Whats-App-Image-2021-10-30-at-01-17-02.jpg](https://i.postimg.cc/26Y8jWYz/Whats-App-Image-2021-10-30-at-01-17-02.jpg)](https://postimg.cc/t1rH2Y7f)
-
 Setelah itu kita lakukan restart pada service bind9.
 
 Setelah melakukan konfigurasi pada EniesLobby, kita akan melakukan konfigurasi pada Water 7.
@@ -110,7 +106,13 @@ Kemudian buat direktori dengan nama delegasi yaitu sunnygo dan copy db.local ke 
 
 Kemudian kita edit file ```mecha.franky.e11.com``` menjadi :
 
-[![Whats-App-Image-2021-10-30-at-01-32-25.jpg](https://i.postimg.cc/Mpky0sbt/Whats-App-Image-2021-10-30-at-01-32-25.jpg)](https://postimg.cc/7fVGwnRT)
+[![Whats-App-Image-2021-10-30-at-01-37-03.jpg](https://i.postimg.cc/tgvtLFVM/Whats-App-Image-2021-10-30-at-01-37-03.jpg)](https://postimg.cc/Z93dNBH8)
+
+Kemudian lakukan restart pada service bind9.
+
+Untuk melakukan testing apakah sudah benar, kita bisa melakukan ping ```mecha.franky.e11.com``` pada client Loguetown dan harusnya akan mengarah ke IP Skypie.
+
+[![Whats-App-Image-2021-10-30-at-01-43-07.jpg](https://i.postimg.cc/T1N6b7yc/Whats-App-Image-2021-10-30-at-01-43-07.jpg)](https://postimg.cc/dZCpP9j7)
 
 ### Soal 7
 Untuk memperlancar komunikasi Luffy dan rekannya, dibuatkan subdomain melalui Water7 dengan nama ```general.mecha.franky.yyy.com``` dengan alias ```www.general.mecha.franky.yyy.com``` yang mengarah ke Skypie.
