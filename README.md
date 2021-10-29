@@ -66,6 +66,21 @@ Dan setelah itu melakukan restart bind9. Untuk mengecek apakah sudah benar, kita
 
 ### Soal 5
 Supaya tetap bisa menghubungi Franky jika server EniesLobby rusak, maka buat Water7 sebagai DNS Slave untuk domain utama.
+Untuk membuat DNS Slave, pertama kita akan mengedit zone "franky.e11.com" pada ```/etc/bind/named.conf.local``` menjadi sebagai berikut :
+
+[![Whats-App-Image-2021-10-30-at-00-53-41.jpg](https://i.postimg.cc/m2xrrKSL/Whats-App-Image-2021-10-30-at-00-53-41.jpg)](https://postimg.cc/fkKs22Fp)
+
+Kemudian kita lakukan restart bind9.
+Pada Water 7, kita akan menginstall bind9 dan mengedit file ```/etc/bind/named.conf.local``` dan mengisinya menjadi :
+
+[![Whats-App-Image-2021-10-30-at-00-58-22.jpg](https://i.postimg.cc/4xG4ZtQB/Whats-App-Image-2021-10-30-at-00-58-22.jpg)](https://postimg.cc/56PWSXGC)
+
+Setelah itu, kita melakukan restart pada bind9.
+
+Untuk mengecek apakah sudah benar, maka kita akan stop bind9 pada EniesLobby, selanjutnya kita tambahkan IP Water 7 ke ```/etc/resolv.conf``` pada Loguetown dengan command ```echo 'nameserver 192.205.2.3' >> /etc/resolv.conf```. Setelah itu kita coba ping franky.e11.com dan seharusnya tetap berhasil walau service bind9 pada EniesLobby di stop.
+
+[![Whats-App-Image-2021-10-30-at-01-07-15.jpg](https://i.postimg.cc/28sbWVFZ/Whats-App-Image-2021-10-30-at-01-07-15.jpg)](https://postimg.cc/qzGvVBFJ)
+
 ### Soal 6
 Setelah itu terdapat subdomain ```mecha.franky.yyy.com``` dengan alias ```www.mecha.franky.yyy.com``` yang didelegasikan dari EniesLobby ke Water7 dengan IP menuju ke Skypie dalam folder sunnygo.
 ### Soal 7
