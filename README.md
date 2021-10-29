@@ -19,8 +19,21 @@ Pada praktikum ini, kami membuat script yang bernama ```script.sh``` dan menjala
 Semua node terhubung pada router Foosha, sehingga dapat mengakses internet.
 Pertama-tama, kita harus menambahkan ```iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.205.0.0/16``` pada file ```.bashrc``` pada foosha. Bisa dilihat pada gambar dibawah ini:
 
+[![Whats-App-Image-2021-10-29-at-21-59-33.jpg](https://i.postimg.cc/KvjFpddm/Whats-App-Image-2021-10-29-at-21-59-33.jpg)](https://postimg.cc/mhv0t6Ln)
+
+Setelah itu, menambahkan IP DNS ke ```/etc/resolv.conf``` pada tiap node yang ada dengan menggunakan command ```echo nameserver 192.168.122.1 > /etc/resolv.conf``` yang dimasukkan pada file ```.bashrc``` sehingga bisa secara otomatis. Untuk mengecek apakah node sudah tersambung ke internet, kita bisa melakukan ping google, seperti pada contoh berikut :
+
+[![Whats-App-Image-2021-10-30-at-00-03-43.jpg](https://i.postimg.cc/TY6wCrmT/Whats-App-Image-2021-10-30-at-00-03-43.jpg)](https://postimg.cc/rzfMpRQH)
+
+
 ### Soal 2
 Luffy ingin menghubungi Franky yang berada di EniesLobby dengan denden mushi. Kalian diminta Luffy untuk membuat website utama dengan mengakses ```franky.yyy.com``` dengan alias ```www.franky.yyy.com``` pada folder kaizoku.
+Pertama - tama kita melakukan instalasi bind dengan command ```apt-get install bind9 -y``` pada Enies Lobby, kemudian melakukan konfigurasi domain. Setelah itu kita membuat folder kaizoku dan copykan file db.local pada path /etc/bind ke dalam folder kazioku yang baru saja dibuat dan ubah namanya menjadi ```franky.E11.com```. 
+
+[![Whats-App-Image-2021-10-30-at-00-11-12.jpg](https://i.postimg.cc/8PMyVVjh/Whats-App-Image-2021-10-30-at-00-11-12.jpg)](https://postimg.cc/xcjGKhGC)
+
+
+
 ### Soal 3
 Setelah itu buat subdomain ```super.franky.yyy.com``` dengan alias ```www.super.franky.yyy.com``` yang diatur DNS nya di EniesLobby dan mengarah ke Skypie.
 ### Soal 4
