@@ -52,6 +52,18 @@ Untuk mengecek apakah sudah benar atau belum, kita bisa melakukan ping dengan co
 
 ### Soal 4
 Buat juga reverse domain untuk domain utama.
+Untuk membuat reverse domain, pertama - tama kita akan mengedit file ```/etc/bind/named.conf.local``` pada EniesLobby dengan menambahkan konfigurasi zone reverse DNS. Kemudian copy file db.local pada path ```/etc/bind``` ke dalam folder jarkom yang baru saja dibuat dan ubah namanya menjadi ```2.205.192.in-addr.arpa```
+
+[![Whats-App-Image-2021-10-30-at-00-38-31.jpg](https://i.postimg.cc/ZKX18hMg/Whats-App-Image-2021-10-30-at-00-38-31.jpg)](https://postimg.cc/Wh6WVxj6)
+
+Setelah itu, edit file ```2.205.192.in-addr.arpa``` menjadi seperti gambar di bawah ini :
+
+[![Whats-App-Image-2021-10-30-at-00-45-33.jpg](https://i.postimg.cc/k4tjXVng/Whats-App-Image-2021-10-30-at-00-45-33.jpg)](https://postimg.cc/gXmyg2XC)
+
+Dan setelah itu melakukan restart bind9. Untuk mengecek apakah sudah benar, kita bisa mengecek pada Loguetown dengan command ```host -t PTR 192.205.2.2```
+
+[![Whats-App-Image-2021-10-30-at-00-49-02.jpg](https://i.postimg.cc/TYHWQtVB/Whats-App-Image-2021-10-30-at-00-49-02.jpg)](https://postimg.cc/nCBzhYw1)
+
 ### Soal 5
 Supaya tetap bisa menghubungi Franky jika server EniesLobby rusak, maka buat Water7 sebagai DNS Slave untuk domain utama.
 ### Soal 6
