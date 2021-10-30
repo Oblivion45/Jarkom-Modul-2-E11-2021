@@ -135,4 +135,16 @@ Setelah itu, pada subdomain ```www.super.franky.yyy.com```, Luffy membutuhkan pe
 ### Soal 11
 Akan tetapi, pada folder /public, Luffy ingin hanya dapat melakukan directory listing saja.
 ### Soal 12
-Tidak hanya itu, Luffy juga menyiapkan error file 404.html pada folder /error untuk mengganti error kode pada apache . 
+Tidak hanya itu, Luffy juga menyiapkan error file 404.html pada folder /error untuk mengganti error kode pada apache .
+### Soal 13
+Luffy juga meminta Nami untuk dibuatkan konfigurasi virtual host. Virtual host ini bertujuan untuk dapat mengakses file asset ```www.super.franky.yyy.com/public/js``` menjadi ```www.super.franky.yyy.com/js```. 
+### Soal 14
+Dan Luffy meminta untuk web ```www.general.mecha.franky.yyy.com``` hanya bisa diakses dengan port 15000 dan port 15500
+### Soal 15
+Dengan autentikasi username luffy dan password onepiece dan file di ```/var/www/general.mecha.franky.yyy```
+### Soal 16
+Dan setiap kali mengakses IP Skypie akan dialihkan secara otomatis ke ```www.franky.yyy.com```
+### Soal 17
+Dikarenakan Franky juga ingin mengajak temannya untuk dapat menghubunginya melalui website ```www.super.franky.yyy.com```, dan dikarenakan pengunjung web server pasti akan bingung dengan randomnya images yang ada, maka Franky juga meminta untuk mengganti request gambar yang memiliki substring “franky” akan diarahkan menuju franky.png. Maka bantulah Luffy untuk membuat konfigurasi dns dan web server ini!
+
+
