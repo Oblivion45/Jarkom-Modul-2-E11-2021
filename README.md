@@ -228,4 +228,10 @@ dan maka akan diarahkan ke ```franky.e11.com```
 ### Soal 17
 Dikarenakan Franky juga ingin mengajak temannya untuk dapat menghubunginya melalui website ```www.super.franky.yyy.com```, dan dikarenakan pengunjung web server pasti akan bingung dengan randomnya images yang ada, maka Franky juga meminta untuk mengganti request gambar yang memiliki substring “franky” akan diarahkan menuju franky.png. Maka bantulah Luffy untuk membuat konfigurasi dns dan web server ini!
 
+Pertama, kita akan mengedit file ```/var/www/super/franky.e11.com/.htaccess``` menjadi sebagai berikut :
+
+[![Whats-App-Image-2021-10-30-at-21-24-32.jpg](https://i.postimg.cc/yNdQRJYK/Whats-App-Image-2021-10-30-at-21-24-32.jpg)](https://postimg.cc/dhbjPVyN)
+
+Kemudian kita melakukan restart pada service apache2
+
 
