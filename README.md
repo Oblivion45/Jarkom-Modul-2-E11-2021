@@ -174,6 +174,26 @@ maka akan keluar seperti :
 
 ### Soal 9
 Setelah itu, Luffy juga membutuhkan agar url ```www.franky.yyy.com/index.php/home``` dapat menjadi menjadi ```www.franky.yyy.com/home```. 
+
+Untuk itu kita menggunakan `a2enmod rewrite` berikut agar dapat membaca ``index.php`` dengan melakukannya pada `script.sh`.
+
+```
+cd
+cd /etc/apache2/sites-available
+a2ensite franky.e11.com.conf
+a2enmod rewrite
+
+cd
+
+echo 'RewriteEngine On
+ RewriteCond %{REQUEST_FILENAME} !-d
+ RewriteRule ^([^\.]+)$ $index.php [NC,L]  
+'>/var/www/franky.e11.com/.htaccess
+```
+lalu kita coba lakukan `lynx franky.e11.com/home` dan mendapat hasil yang sama dengan `franky.yyy.com/index.php/home` tanpa harus menggunakan `index.php` hasil nya sebagai berikut:
+
+![image2](https://imgur.com/a/qVTbl6r)
+
 ### Soal 10
 Setelah itu, pada subdomain ```www.super.franky.yyy.com```, Luffy membutuhkan penyimpanan aset yang memiliki DocumentRoot pada ```/var/www/super.franky.yyy.com```
 ### Soal 11
