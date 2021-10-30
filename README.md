@@ -129,7 +129,9 @@ Dan untuk mengecek / testing, kita bisa melakukan ```ping general.mecha.franky.e
 ### Soal 8
 Setelah melakukan konfigurasi server, maka dilakukan konfigurasi Webserver. Pertama dengan webserver ```www.franky.yyy.com```. Pertama, luffy membutuhkan webserver dengan DocumentRoot pada ```/var/www/franky.yyy.com```.
 
-pertama kita harus mengcopy file ```000-default.conf``` menjadi ```franky.e11.com.conf``` lalu edit file tersebut menjadi
+untuk memulai webserver diharuskan menginstall apache2,libapache2-mod-php7.0 dan php terlebih dahulu
+
+pada node skypie,pertama kita harus mengcopy file ```000-default.conf``` menjadi ```franky.e11.com.conf``` lalu edit file tersebut menjadi
 
 ```
 echo ' <VirtualHost *:80 *:15000 *:15500 >
@@ -162,6 +164,12 @@ setelah itu kita masuk ke ```/etc/apache2/sites-available``` dan menjalankan com
 setelah itu kita mengambil file franky yang didalam github menggunakan fitur ```wget``` dan ```unzip``` ,lalu memindahkan file franky kedalam document root /var/www/franky.e11.com
 
 jangan lupa untuk menjalankan ```service apache2 restart```
+
+setelah itu pada node loguetown kita menjalankan ```lynx franky.e11.com```
+
+maka akan keluar seperti :
+
+![image](https://user-images.githubusercontent.com/77099292/139523651-96316e86-05d9-4cd8-869d-2ffb20b6a263.png)
 
 
 ### Soal 9
