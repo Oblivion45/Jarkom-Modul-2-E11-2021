@@ -214,7 +214,7 @@ Pertama - tama, kita akan mengedit file ```/etc/apache2/sites-available/000-defa
 
 [![Whats-App-Image-2021-10-30-at-20-41-41.jpg](https://i.postimg.cc/ZRkyPgFc/Whats-App-Image-2021-10-30-at-20-41-41.jpg)](https://postimg.cc/rdJmMfH0)
 
-kemudian kita melakukan command ```cd /etc/apache2/sites-available/000-default.conf``` dan ```aensite 000-default.conf```. Setelah itu kita melakukan restart pada bind9.
+kemudian kita melakukan command ```cd /etc/apache2/sites-available/000-default.conf``` dan ```aensite 000-default.conf```. Setelah itu kita melakukan restart pada apache2.
 
 Untuk melakukan pengecekan, kita bisa ke node Loguetown dan mencoba dengan melakukan command :
 
