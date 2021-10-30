@@ -128,6 +128,42 @@ Dan untuk mengecek / testing, kita bisa melakukan ```ping general.mecha.franky.e
 
 ### Soal 8
 Setelah melakukan konfigurasi server, maka dilakukan konfigurasi Webserver. Pertama dengan webserver ```www.franky.yyy.com```. Pertama, luffy membutuhkan webserver dengan DocumentRoot pada ```/var/www/franky.yyy.com```.
+
+pertama kita harus mengcopy file ```000-default.conf``` menjadi ```franky.e11.com.conf``` lalu edit file tersebut menjadi
+
+```
+echo ' <VirtualHost *:80 *:15000 *:15500 >
+        # The ServerName directive sets the request scheme, hostname and port t$
+        # the server uses to identify itself. This is used when creating
+        # redirection URLs. In the context of virtual hosts, the ServerName
+        # specifies what hostname must appear in the requests Host: header to
+        # match this virtual host. For the default virtual host (this file) this
+        # value is not decisive as it is used as a last resort host regardless.
+        # However, you must set it for any further virtual host explicitly.
+        #ServerName www.example.com
+
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/franky.e11.com
+        ServerName franky.e11.com
+        serverAlias www.franky.e11.com 192.205.2.4
+
+         ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+        
+        </VirtualHost>
+
+        # vim: syntax=apache ts=4 sw=4 sts=4 sr noet   
+
+' >/etc/apache2/sites-available/franky.e11.com.conf
+```
+
+setelah itu kita masuk ke ```/etc/apache2/sites-available``` dan menjalankan command ```a2ensite franky.e11.com.conf``` yang berfungsi untuk mengaktifkan franky.e11.com.conf
+
+setelah itu kita mengambil file franky yang didalam github menggunakan fitur ```wget``` dan ```unzip``` ,lalu memindahkan file franky kedalam document root /var/www/franky.e11.com
+
+jangan lupa untuk menjalankan ```service apache2 restart```
+
+
 ### Soal 9
 Setelah itu, Luffy juga membutuhkan agar url ```www.franky.yyy.com/index.php/home``` dapat menjadi menjadi ```www.franky.yyy.com/home```. 
 ### Soal 10
