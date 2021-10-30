@@ -192,20 +192,107 @@ echo 'RewriteEngine On
 ```
 lalu kita coba lakukan `lynx franky.e11.com/home` dan mendapat hasil yang sama dengan `franky.yyy.com/index.php/home` tanpa harus menggunakan `index.php` hasil nya sebagai berikut:
 
-![image2](https://imgur.com/a/qVTbl6r)
+[![Screenshot-2021-10-30-204734.png](https://i.postimg.cc/VvK7skn5/Screenshot-2021-10-30-204734.png)](https://postimg.cc/7JT1mDBy)
+
 
 ### Soal 10
 Setelah itu, pada subdomain ```www.super.franky.yyy.com```, Luffy membutuhkan penyimpanan aset yang memiliki DocumentRoot pada ```/var/www/super.franky.yyy.com```
+
+yaitu dengan membuat file dengan command 
+```
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/super.franky.e11.com
+        ServerName super.franky.e11.com
+        serverAlias www.super.franky.e11.com 192.205.2.4
+```
+lalu kita lakukan `lynx super.franky.e11.com` dan hasilnya documentRoot pada `/var/www/super.franky.e11.com`
+
+[![no10.png](https://i.postimg.cc/cL7NZQ6J/no10.png)](https://postimg.cc/w1BrQRXK)
+
 ### Soal 11
 Akan tetapi, pada folder /public, Luffy ingin hanya dapat melakukan directory listing saja.
+
+lalu untuk hanya dapat melakukan listing saja maka command kita gunakan yaitu 
+
+```
+/Directory>
+
+        <Directory /var/www/super.franky.e11.com/public/js>
+        Options +Indexes
+         </Directory>
+        
+```
+sehingga jika kita melakukan `lynx super.franky.e11.com/public` maka hasilnya adalah listing data pada folder public sebagai berikut:
+
+[![no11.png](https://i.postimg.cc/yYdwtMCv/no11.png)](https://postimg.cc/8s2Krn56)
+
 ### Soal 12
-Tidak hanya itu, Luffy juga menyiapkan error file 404.html pada folder /error untuk mengganti error kode pada apache .
+Tidak hanya itu, Luffy juga menyiapkan error file 404.html pada folder /error untuk mengganti error kode pada apache.
+
+yaitu dengan menambah command 
+
+`ErrorDocument 404 /error/404.html` 
+
+pada `script.sh` sehingga jika ada yang salah atau error akan menampilkan pesan sebagai berikut:
+
+[![no12.png](https://i.postimg.cc/WzhcGC2W/no12.png)](https://postimg.cc/5Qdr1PQL)
+
 ### Soal 13
 Luffy juga meminta Nami untuk dibuatkan konfigurasi virtual host. Virtual host ini bertujuan untuk dapat mengakses file asset ```www.super.franky.yyy.com/public/js``` menjadi ```www.super.franky.yyy.com/js```. 
+
+yaitu dengan menggunakan command 
+
+` Alias "/js" "/var/www/super.franky.e11.com/public/js"`
+
+sehingga dengan melakukan `lynx super.franky.e11.com/public/js` dapat langsung menuju `/public/js` seperti gambar berikut
+
+[![no13.png](https://i.postimg.cc/sgtPshQv/no13.png)](https://postimg.cc/fVfSvkvN)
+
+
 ### Soal 14
 Dan Luffy meminta untuk web ```www.general.mecha.franky.yyy.com``` hanya bisa diakses dengan port 15000 dan port 15500
+
+Maka awalnya diperlukan command 
+
+```
+echo '
+ 
+
+Listen 80
+Listen 15000
+Listen 15500
+
+```
+Dan juga mengatur VirtualHost sehingga hanya melalui port `15000` dan `15500` tanpa harus lewat port 80
+
+```
+echo ' <VirtualHost *:15000 *:15500>
+```
+dan kita coba masuk menggunakan port `15000` dengan command 
+
+`lynx general.mecha.franky.e11.com:15000`
+
+sehingga hasilnya sebagai berikut
+
+[![14-15.png](https://i.postimg.cc/zvVVcqwT/14-15.png)](https://postimg.cc/4HRfKkS3)
+
+
 ### Soal 15
 Dengan autentikasi username luffy dan password onepiece dan file di ```/var/www/general.mecha.franky.yyy```
+
+maka kita tambah file baru untuk meletakkan validasi username dan password yaitu dengan command 
+
+[![15-1.png](https://i.postimg.cc/nrtPdLfP/15-1.png)](https://postimg.cc/cgXhC0HR)
+
+sehingga mengambil filenya di `etc/apache2./htpasswd` dengan username  `luffy` password `onepiece`
+
+[![15-2.png](https://i.postimg.cc/3xPCjcTL/15-2.png)](https://postimg.cc/rDNrMgzW)
+
+dan kita coba masuk lagi dengan `lynx general.mecha.franky.e11.com:15000` dengan username  `luffy` password `onepiece`
+
+[![14-15.png](https://i.postimg.cc/zvVVcqwT/14-15.png)](https://postimg.cc/4HRfKkS3)
+
+
 ### Soal 16
 Dan setiap kali mengakses IP Skypie akan dialihkan secara otomatis ke ```www.franky.yyy.com```
 Pertama - tama, kita akan mengedit file ```/etc/apache2/sites-available/000-default.conf``` menjadi sebagai berikut :
