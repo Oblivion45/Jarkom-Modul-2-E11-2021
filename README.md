@@ -234,4 +234,12 @@ Pertama, kita akan mengedit file ```/var/www/super/franky.e11.com/.htaccess``` m
 
 Kemudian kita melakukan restart pada service apache2
 
+Untuk mengeceknya, kita bisa memasukkan command berikut pada Loguetown :
+
+[![Whats-App-Image-2021-10-30-at-21-38-47.jpg](https://i.postimg.cc/j5Nj44sY/Whats-App-Image-2021-10-30-at-21-38-47.jpg)](https://postimg.cc/5Y41xvYs)
+
+dan maka akan muncul :
+
+[![Whats-App-Image-2021-10-30-at-21-37-26.jpg](https://i.postimg.cc/6Q46Bf44/Whats-App-Image-2021-10-30-at-21-37-26.jpg)](https://postimg.cc/TyGv9m9T)
+
 
