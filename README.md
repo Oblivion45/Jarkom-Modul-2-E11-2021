@@ -208,6 +208,23 @@ Dan Luffy meminta untuk web ```www.general.mecha.franky.yyy.com``` hanya bisa di
 Dengan autentikasi username luffy dan password onepiece dan file di ```/var/www/general.mecha.franky.yyy```
 ### Soal 16
 Dan setiap kali mengakses IP Skypie akan dialihkan secara otomatis ke ```www.franky.yyy.com```
+Pertama - tama, kita akan mengedit file ```/etc/apache2/sites-available/000-default.conf``` menjadi sebagai berikut :
+
+[![Whats-App-Image-2021-10-30-at-20-40-51.jpg](https://i.postimg.cc/bv59730D/Whats-App-Image-2021-10-30-at-20-40-51.jpg)](https://postimg.cc/67dZRVmt)
+
+[![Whats-App-Image-2021-10-30-at-20-41-41.jpg](https://i.postimg.cc/ZRkyPgFc/Whats-App-Image-2021-10-30-at-20-41-41.jpg)](https://postimg.cc/rdJmMfH0)
+
+kemudian kita melakukan command ```cd /etc/apache2/sites-available/000-default.conf``` dan ```aensite 000-default.conf```. Setelah itu kita melakukan restart pada bind9.
+
+Untuk melakukan pengecekan, kita bisa ke node Loguetown dan mencoba dengan melakukan command :
+
+[![Whats-App-Image-2021-10-30-at-20-50-10.jpg](https://i.postimg.cc/9QC29B77/Whats-App-Image-2021-10-30-at-20-50-10.jpg)](https://postimg.cc/rKn7XxgV)
+
+dan maka akan diarahkan ke ```franky.e11.com```
+
+[![Whats-App-Image-2021-10-30-at-20-50-46.jpg](https://i.postimg.cc/0QfD8nD0/Whats-App-Image-2021-10-30-at-20-50-46.jpg)](https://postimg.cc/tZsYkhrs)
+
+
 ### Soal 17
 Dikarenakan Franky juga ingin mengajak temannya untuk dapat menghubunginya melalui website ```www.super.franky.yyy.com```, dan dikarenakan pengunjung web server pasti akan bingung dengan randomnya images yang ada, maka Franky juga meminta untuk mengganti request gambar yang memiliki substring “franky” akan diarahkan menuju franky.png. Maka bantulah Luffy untuk membuat konfigurasi dns dan web server ini!
 
